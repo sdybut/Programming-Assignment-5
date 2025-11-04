@@ -1,6 +1,6 @@
 # Programming-Assignment-5
 
-### Problem 1 
+## Problem 1 
 Aside from the transpose command, there are two other operations that appears to do the same. These are the operators ‘ (apostrophe after the variable) and .’ (a dot and apostrophe after the variable). Determine the differences between these three operations.
 
 
@@ -61,11 +61,11 @@ b.' <br/>
 
 **Conclusion**
 
-To conclude, I focused on understanding how MATLAB handles different transpose operations. I began by testing a real matrix using transpose(A), A', and A.' to see if there was any difference. Since all entries were real, I observed that the results were identical. I then tested a complex matrix to explore deeper, and that’s when I realized A' performs a conjugate transpose, it flips rows and columns but also changes the signs of the imaginary parts, while transpose(A) and A.' only perform a pure transpose. This step-by-step process helped me understand how MATLAB distinguishes between real and complex matrices, and why using the correct operator matters when working with complex numbers in engineering and mathematical computations.
+To conclude, I started by creating a simple real matrix and used the three transpose operations: transpose(A), A', and A.'. At first, I thought they all did the same thing since they all switch rows and columns but still the same, but when I tried using a complex matrix, I saw the difference. The A' command not only transposes the matrix but also changes the signs of the values, while transpose(A) and A.' only flip the rows and columns without changing any signs. I tested each command step by step to compare the results, and this helped me understand what is the difference between them. From this, I learned that A' is used when dealing with complex conjugates, while transpose(A) and A.' are for regular transposing, especially when working only with real numbers.
 
 
-### Problem 2
-Solve the given linear equations simultaneously using two methods: (1) inverse method and (2) Cramer’s Rule.
+## Problem 2
+Solve the given linear equations simultaneously using two methods: (1) inverse method and (2) Cramer’s Rule. </br>
 <img width="347" height="148" alt="image" src="https://github.com/user-attachments/assets/0b24eb9f-6184-4f6f-a0d9-3e832a78a22d" />
 
 
@@ -124,11 +124,12 @@ Solve the given linear equations simultaneously using two methods: (1) inverse m
 
 detA = 1.3856e+04 <br/> 
 
+</br>
+
 da <br/>
 <img width="562" height="192" alt="image" src="https://github.com/user-attachments/assets/07a92971-7733-41b5-9259-529a22b02a9f" /> <br/>
 d1 = 1.3856e+04 <br/>
 
-<br/>
 
 db <br/>
 <img width="571" height="209" alt="image" src="https://github.com/user-attachments/assets/8479a8e8-8c4c-43a4-aaf0-26bb4c446fce" /> <br/>
@@ -139,9 +140,11 @@ dc <br/>
 <img width="574" height="194" alt="image" src="https://github.com/user-attachments/assets/1eb9acdc-f30e-4ad0-adf5-9cf0e769eeb7" /> <br/>
 d3 = 1.3856e+04 <br/>
 
+
 dd <br/>
 <img width="570" height="197" alt="image" src="https://github.com/user-attachments/assets/9b30034e-6634-4c1e-b5f7-52aafc4f874d" /> <br/>
 d4 = 0 <br/>
+
 
 de <br/>
 <img width="565" height="193" alt="image" src="https://github.com/user-attachments/assets/8705335d-c9c7-4791-8f0b-9e2653eacb8c" /> <br/>
@@ -157,7 +160,9 @@ d5 =  1.3856e+04 <br/>
 <br/>
 
 **Output** </br>
-
 cramer </br> 
-<img width="131" height="195" alt="image" src="https://github.com/user-attachments/assets/1a6ac350-5dd0-4c07-bafc-f50ef43c7fb0" />
+<img width="131" height="195" alt="image" src="https://github.com/user-attachments/assets/1a6ac350-5dd0-4c07-bafc-f50ef43c7fb0" /> </br>
 
+
+**Conclusion** </br>
+To conclude, first, I wrote the system in matrix form by putting all coefficients in a matrix x and the constants in a column vector y. I solved it in two ways. I used the inverse method first (inv(x)*y) to quickly get a solution and checked my matrices. Then I did the Cramer’s Rule step by step: I found detA = det(x) to be non-zero (so a unique answer exists), replaced one column of x at a time with y which are the da, db, dc, de, and dd, then, took each determinant (d1, d2, d3, d4, and d5), and formed the solution cramer = [d1; d2; d3; d4; d5] / detA. I noticed one determinant was extremely small (about 6.3e-14), which is basically zero due to rounding on the computer. Both methods gave the same final answer, [1; 0; 1; 0; 1], so I knew my process and code were correct.
