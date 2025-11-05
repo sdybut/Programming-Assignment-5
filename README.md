@@ -160,7 +160,7 @@ d5 =  1.3856e+04 <br/>
 <br/>
 
 **Output** </br>
-cramer </br> 
+Final Answer for the cramer's rule: </br> 
 <img width="131" height="195" alt="image" src="https://github.com/user-attachments/assets/1a6ac350-5dd0-4c07-bafc-f50ef43c7fb0" /> </br>
 
 
